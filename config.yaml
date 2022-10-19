@@ -1,0 +1,5 @@
+method: resize_and_centercrop
+resize_small_size: 576
+crop_size: [512, 512]
+flip: True
+fuse: tsharpen
