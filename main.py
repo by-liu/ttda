@@ -47,6 +47,7 @@ def inference(model, dataset, config, save_path):
     model.eval()
 
     fsave = open(save_path, "w")
+    fsave.write("image_id,pred_label,drmax,dr0,dr1,dr2,dr3,dr4\n")
 
     for i, samples in tqdm(enumerate(dataset), total=len(dataset)):
         image, _, image_id = samples
@@ -64,9 +65,10 @@ def inference(model, dataset, config, save_path):
         pred_label = torch.argmax(predicts)
 
         fsave.write((
-            f"{image_id},{osp.splitext(image_id)[0]},{pred_label},{predicts.max():.5f},"
+            f"{osp.splitext(image_id)[0]},{pred_label},{predicts.max():.5f},"
             f"{predicts[0]:.5f},{predicts[1]:.5f},{predicts[2]:.5f},{predicts[3]:.5f},{predicts[4]:.5f}\n"
         ))
+    fsave.close()
     logger.info(f"Predictions saved to {save_path}")
 
 def main():
