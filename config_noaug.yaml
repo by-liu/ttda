@@ -1,0 +1,4 @@
+method: resize
+crop_size: [512, 512]
+flip: False
+fuse: mean
