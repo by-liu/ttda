@@ -18,3 +18,6 @@ INFO:__main__:TTDA config loaded : {'method': 'resize_and_centercrop', 'resize_s
 INFO:__main__:Predictions saved to predicts.csv
 INFO:__main__:Done!
 ```
+
+
+tent model : [tent resnext101 model](https://drive.google.com/file/d/1-aAuPgS4oRHRWKcJD8Hw6kFnAgB6RDXG/view?usp=share_link)
